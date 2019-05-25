@@ -1,0 +1,21 @@
+<%= render 'users/header', user: @user, book:@book %>
+
+
+<h2>プロフィール編集</h2>
+
+
+<%= form_for(@user) do |f| %>
+
+        <label>Name</label>
+        <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"名前"%><br>
+        <label>Introduction</label>
+        <%= f.text_area :introduction, autofocus: true, class:"form-control",placeholder:"自己紹介"%><br>
+
+        <label>プロフィール画像</label><br>
+        <%= attachment_image_tag @user, :profile_image, :fill, 70,70, class: "profile-thumb", fallback: "no_image.jpg"%>
+        <br>
+		<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %><br>
+		<%= f.submit "変更を保存", class:"btn btn-primary" %>
+
+<% end %>
+

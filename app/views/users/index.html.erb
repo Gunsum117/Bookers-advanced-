@@ -1,0 +1,31 @@
+<%= render 'users/header', user: @user, book:@book  %>
+
+<div class = "container">
+  <div class = "row">
+
+    <div class = "col-lg-3">
+      <%= render 'users/profile', user: @user, book:@book %>
+    </div>
+
+
+<div class = "col-lg-7">
+<table class="table table-striped", width="800">
+        <tr>
+        	<th>user</th>
+            <th>name</th>
+            <th>introduction</th>
+            <th></th>
+        </tr>
+    <% @users.each do |user| %>
+        <tr>
+        	<td><%= link_to attachment_image_tag(user, :profile_image, format:"jpeg", fallback:"no_image.jpg", size:"20x20"), user_path(user) %></td>
+            <td><%= user.name %></td>
+            <td><%= user.introduction %></td>
+            <td><%= link_to "show" , user_path(user) %></td>
+        </tr>
+    <% end %>
+</table>
+</div>
+
+</div>
+</div>
