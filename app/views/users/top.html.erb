@@ -1,11 +1,7 @@
 <%= render 'users/header', user:@user , book:@book %>
 
-<% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
-  <%= yield %>
 
-<h1>welcome to 
+<h1>welcome to
 	<span class = "glyphicon glyphicon-book"></span>
 	Bookers !!
 </h1>
@@ -21,3 +17,8 @@ about varioius books!</p>
 	<%= link_to "Log in", new_user_session_path, class:"btn btn-primary" %>
 	<%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary" %>
 </div>
+
+<br>
+<br>
+
+<p> CopyRight Infratop.inc </p>
